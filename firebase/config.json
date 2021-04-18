@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "bigberry-ecommerce",
+  "private_key_id": "560ce81392d896bb1705b3002f7d91285a885b4b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDCxPGlgOQNbev/\n5F15zG6+1kkc2zrtTmWYRfcNJoCtyKdU87cImsZdi0oyN2rFb9pLbw6mRUJGMerr\noCF9tVUC+9liFy8IgH+GTx+NBDnlO5Vx0aU5wdEYOaqKNwLDN7h8KFm6xxok5hEZ\nkfvYS2trqy/qCvpgC+CROU9jDK0n4qc5I//8kGN5duYQxlUlW0n/eRSdEZEg2YbF\n4jQIwTV2SwljvmvcPSIhl5ybaes2p01nWSXQSuHIAyUF1lmd9Hnn32CqDTLGgPWk\nc5xyGY4XvO1640CqaCNyyYUHYfA+maC2wrJOpkzsQaN12qEFf8ssus9U3tNcyuSd\nMc4aCPtnAgMBAAECggEAQ4anZuOAbX2COFYy6FLtxGEjuQry66pmA7yiEh+atmWe\nShAzEZsjkfQEVdOrw2brroKC+DeD6jVNRsLeSaiQIDgz3lO+XTq7u9N701a3Qdf+\nEJeIKrWdKkJ383JuFUOgxP7yWRTFZiyTmiNoRs2jIRGZS5Hhy2Hiykat1N/kurI5\nGYyWHsIeIQAL79Y12kSzecalbNOKYyNmRzwHzwPLdHWjN5JboiVEr7BKeDy3HIN8\nsNLlMyNrnMWWLHCR+y2rNUGAgV/M/Ikfk7x6+XiWwaDeSNmkO+m8kxblE2/yevzh\nVxPizKogQPPILYSMuVsebHoWYVEHOrPOzIKwqDXrhQKBgQD1EUrJfbWWrMgesxcW\nB2moV5DpZiZpn6wKIxC7whx9M3o+9V1uE8VVif+JSi2Zr7p7LQmAI7F8gc2KEzrB\nM0cHJi3798Calj5w7Rj0E/X+xzOaLNCVMYZkhgnUihhNFxN0LwJZVEVPdvj2TV8r\nFh0gvTzfq8Y9a9SfVEXgge4JowKBgQDLdT0L78vyJ0tjjGr3nLCYrSw8O8IROl4s\nAkMRRhcXC9aARTQKNdvprCOxT+00SufIWU+YoHaj4FxAT6WUJj8eaeqE3tKH53O/\naZtD353xjEQrnuEzoyIEi3Fgkd83lEGsYafSLNO7kwRI+yikEX3yAGUZmMyvnDZV\ngWtdnbWrbQKBgA4RSgu67ZuSm4I3oZGgJ06EiEr9lCLoCYYjcSh2AhClzdSjXROe\niutYGpUU7v0tezTq5uq2IdAV22ibpfnFKcSdSnJ2TFYTXc45rf8EzlAruyiUffyy\ndRZ8I0BSFQcH1hQLRsU98ySWnb/1vQrKIC3q7v2f7KdF81SaD9DNZI6lAoGAfb/2\nfTw293Il/F87ddNYquTNpGTi67cBoX28ah7CArKEXz9mjLEBPQnx/ZOC7oElhQT+\nVz1GVr9DBVS06D5DYM7h7kGyKeF5/uKM3oSFoFergrJuSnYXfmuZJbDDIBz4Ak1R\nZmviadrSGTFyywUsrLhlxE5WpGuOgYa+D1x8fnkCgYAD1u29zejxqOZQRvj8l6mc\nVbf28FX22RIwL46xxr/CFjdgdyWgxYLj67G8WPk40SbGv1yy+xlo5QEfi/yECBuK\nnLNYxXphlfMTXRHxr53X1i+8zOBuFgB5imMUFhi3+1BKW9CkTMIVaWv+rZYrP6um\nryRb7ICEfVwgiq865WZHAg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-8uiqq@bigberry-ecommerce.iam.gserviceaccount.com",
+  "client_id": "109619112348173768684",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-8uiqq%40bigberry-ecommerce.iam.gserviceaccount.com"
+}
