@@ -59,19 +59,32 @@ exports.removeCoupon = async(req, res)=>{
 exports.applyCoupon = async(req, res)=>{
     let {title} = req.body
     let coupon = await Coupon.findOne({title}).exec()
+    let {expiry} = coupon
+    let todayDate = String(new Date()).split(' ')
+    let validTill = String(expiry).split(' ')
+
     if(coupon){
-        let user = await User.findOne({email:req.user.email}).exec()
-        let cart = await Cart.findOne({orderedBy:user._id}).exec()
-        let cartTotal = cart.totalAmount
-        let discountGiven = (coupon.discountRate / 100) * cartTotal
-        let finalAmount = cartTotal - ( (coupon.discountRate/100) * cartTotal )
-        await Cart.findOneAndUpdate({orderedBy:user._id}, {totalAmountAfterDiscount:finalAmount}, {new:true}).exec((err, result)=>{
-            if(err){
-                console.log(err)
+        if(todayDate[1] === validTill[1] && todayDate[3] === validTill[3]){
+            if(todayDate[2] <= validTill[2]){
+                let user = await User.findOne({email:req.user.email}).exec()
+                let cart = await Cart.findOne({orderedBy:user._id}).exec()
+                let cartTotal = cart.totalAmount
+                let discountGiven = (coupon.discountRate / 100) * cartTotal
+                let finalAmount = cartTotal - ( (coupon.discountRate/100) * cartTotal )
+                await Cart.findOneAndUpdate({orderedBy:user._id}, {totalAmountAfterDiscount:finalAmount}, {new:true}).exec((err, result)=>{
+                    if(err){
+                        console.log(err)
+                    }else{
+                        res.status(200).json({finalAmount, discountGiven})
+                    }
+                })
             }else{
-                res.status(200).json({finalAmount, discountGiven})
+                res.status(400).json({error:'COUPON IS NOT VALID...TRY OTHER COUPON!!'})
             }
-        })
+        }else{
+            res.status(400).json({error:'COUPON IS NOT VALID...TRY OTHER COUPON!!'})
+        }
+        
     }else{
         res.status(400).json({'error':'Coupon is not Valid!!'})
     }

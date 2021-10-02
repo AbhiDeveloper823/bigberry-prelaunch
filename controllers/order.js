@@ -79,10 +79,19 @@ exports.listAllOrders = async(req, res)=>{
         res.status(400).json(error.message)
     }
 }
+exports.listOrderOnCriteria = async(req, res)=>{
+    try {
+        let {deliveryStatus} = req.body
+        let orders = await Order.find({deliveryStatus}).sort({createdAt:'-1'}).populate('orderedBy').populate('products.product').exec()
+        res.status(200).json(orders)
+    } catch (error) {
+        res.status(400).json(error.message)
+    }
+}
 exports.listUserOrder = async(req, res)=>{
     try {
         let user = await User.findOne({email:req.user.email}).exec()
-        let orders = await Order.find({orderedBy:user._id}).populate('products.product').exec()
+        let orders = await Order.find({orderedBy:user._id}).populate('products.product').sort({'createdAt':-1}).exec()
         res.status(200).json(orders)
     } catch (error) {
         res.status(400).json(error.message)
@@ -92,8 +101,18 @@ exports.listUserOrder = async(req, res)=>{
 exports.readOrder = async(req, res)=>{
     try {
         let {id} = req.params
-        const order = await Order.find({_id:id}).populate('orderedBy', 'address').populate('products.product').exec()
+        const order = await Order.find({_id:id}).populate('orderedBy', 'address email').populate('products.product').exec()
         res.status(200).json(order)
+    } catch (error) {
+        res.status(400).json(error.message)
+    }
+}
+
+exports.cancelOrder = async(req, res)=>{
+    try {
+        let {id} = req.params
+        let order = await Order.findByIdAndUpdate(id, {deliveryStatus:'Cancelled'}, {new:true}).exec()
+        res.status(200).json({'success': 'Order Successfully Cancelled!!'})
     } catch (error) {
         res.status(400).json(error.message)
     }

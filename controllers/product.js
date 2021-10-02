@@ -47,7 +47,7 @@ exports.listProductsCount = async(req, res)=>{
 exports.readProduct = async(req, res)=>{
     try {
         let {slug} = req.params
-        let product = await Product.findOne({slug}).populate('subs').populate('ratings.postedBy', 'email').exec()
+        let product = await Product.findOne({slug}).populate('category').populate('subs').populate('ratings.postedBy', 'address').exec()
         res.status(200).json(product)
     } catch (error) {
         res.status(400).json({'error': 'Unable To get the information of the related Products!!'})
@@ -93,7 +93,7 @@ exports.listRelatedProduct = async(req, res)=>{
     let related = await Product.find({
         _id:{$ne:productId},
         category:product.category
-    }).limit(3).exec()
+    }).exec()
     res.status(200).json(related)
 }
 

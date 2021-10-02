@@ -7,6 +7,7 @@ const express = require('express'),
       path = require('path'),
       app       = express()
 require('dotenv').config()
+const nodemailer = require('nodemailer')
 
 //CONFIGURATION
 
@@ -30,6 +31,7 @@ app.use(morgan('tiny'))
 app.get('/', (req, res)=>{
     res.sendFile(path.join(__dirname, 'build/index.html'))
 });
+
 fs.readdirSync('./routes').map((f)=>{
     app.use('/api', require('./routes/' + f))
 })

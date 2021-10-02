@@ -3,7 +3,7 @@ const slugify = require('slugify')
 
 exports.listSubs = async(req, res)=>{
     try {
-        let subs = await Sub.find({}).exec()
+        let subs = await Sub.find({}).populate('category').exec()
         res.status(200).json(subs)
     } catch (error) {
         res.status(400).json({'error': 'Unable To get All The Subs!!'})

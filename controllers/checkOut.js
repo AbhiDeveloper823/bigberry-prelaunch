@@ -51,7 +51,7 @@ exports.userCart = async(req, res)=>{
 exports.listUserCart = async(req, res)=>{
     try {
         let user  = await User.findOne({email : req.user.email}).exec()
-        let cart = await Cart.findOne({orderedBy:user._id}).populate('products.product').populate('products.product[0].subs').exec()
+        let cart = await Cart.findOne({orderedBy:user._id}).populate('products.product').populate('products.product.category').populate('products.product.subs').exec()
         res.status(200).json(cart)
     } catch (error) {
         res.status(400).json(error.message)
@@ -80,7 +80,7 @@ exports.userAddress = async(req, res)=>{
 
 exports.listUserAddress = async(req, res)=>{
     try {
-        let user = await User.findOne({email:req.user.email}).select('address').exec()
+        let user = await User.findOne({email:req.user.email}).select('address avatar').exec()
         res.status(200).json(user)
     } catch (err) {
         res.status(400).json(err.message)

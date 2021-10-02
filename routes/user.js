@@ -12,4 +12,5 @@ router.post('/wishlist', authCheck, createWishlist)
 router.put(`/wishlist/:id`, authCheck, removeWishlist)
 router.put(`/newsletter`, authCheck, updateNewsletter)
 
+
 module.exports = router
